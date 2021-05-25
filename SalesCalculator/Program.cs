@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SalesCalculator {
+    //売り上げクラス
     class Program {
         static void Main(string[] args) {
         }

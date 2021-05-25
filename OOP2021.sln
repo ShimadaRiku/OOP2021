@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistanceConverter", "Distan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesCalculator", "SalesCalculator\SalesCalculator.csproj", "{D32552C9-0BB5-4306-BC60-35C8555C90C2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter02", "Chapter02", "{FBD39F30-EEBE-4C68-9394-22877202DFD6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,7 +31,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0B7D3C33-99E6-4ABF-ADF6-845CAC64B816} = {D02F1E49-C52F-4834-87D8-8A326B756DEE}
-		{D32552C9-0BB5-4306-BC60-35C8555C90C2} = {D02F1E49-C52F-4834-87D8-8A326B756DEE}
+		{D32552C9-0BB5-4306-BC60-35C8555C90C2} = {FBD39F30-EEBE-4C68-9394-22877202DFD6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AE2BA585-DC81-48A5-9356-A45FB38647F8}
