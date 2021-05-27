@@ -10,9 +10,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesCalculator", "SalesCalculator\SalesCalculator.csproj", "{D32552C9-0BB5-4306-BC60-35C8555C90C2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter02", "Chapter02", "{FBD39F30-EEBE-4C68-9394-22877202DFD6}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\Desktop\Sales.csv = ..\..\..\Desktop\Sales.csv
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
