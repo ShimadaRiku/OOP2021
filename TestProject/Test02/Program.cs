@@ -43,7 +43,7 @@ namespace Test02 {
         //問題２　偶数の最大値を表示
         //　　　　出力結果【94】
         private static void Exercise02(List<int> numbers) {
-
+            
 
 
         }
@@ -58,9 +58,11 @@ namespace Test02 {
         //問題４　10以上50以下の数字のみを表示（即時実行でも可とする）
         //　　　　出力結果【12 14 20 40 35 31 17 48】
         private static void Exercise04(List<int> numbers) {
+            foreach (var n in numbers.Where(n => n <= 50).Where(n => n>=10)) {
+                Console.WriteLine(n);
 
 
-
+            }
         }
     }
 }
