@@ -23,7 +23,7 @@ namespace Test01 {
                     Name = items[1],
                     Score = int.Parse(items[2])
                 };
-                sales.Add(student);
+                sales.Add(student); 
             }
             return sales;
         }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Test01 {
+namespace Test01 { 
     class Program {
         static void Main(string[] args) {
             var score = new ScoreCounter("StudentScore.csv");
