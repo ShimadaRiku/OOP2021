@@ -281,6 +281,7 @@ namespace CarReportSystem {
             this.btDateDelete.TabIndex = 8;
             this.btDateDelete.Text = "削除";
             this.btDateDelete.UseVisualStyleBackColor = true;
+            this.btDateDelete.Click += new System.EventHandler(this.btDateDelete_Click_1);
             // 
             // buOpen
             // 

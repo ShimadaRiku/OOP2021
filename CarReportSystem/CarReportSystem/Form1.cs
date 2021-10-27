@@ -86,5 +86,10 @@ namespace CarReportSystem {
         private void groupBox1_Enter(object sender, EventArgs e) {
 
         }
+
+        private void btDateDelete_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
