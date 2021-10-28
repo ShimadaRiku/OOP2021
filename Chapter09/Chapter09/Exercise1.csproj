@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3142B536-A10E-46A1-A361-7CE1C62E4765}</ProjectGuid>
+    <ProjectGuid>{B5DA04DB-51C4-4B18-B9AC-17A27F4C8B9F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>CarReportSystem</RootNamespace>
-    <AssemblyName>CarReportSystem</AssemblyName>
+    <RootNamespace>Chapter09</RootNamespace>
+    <AssemblyName>Chapter09</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,17 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CarReport.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="infosys202117DataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>infosys202117DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,17 +66,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="infosys202117DataSet.xsc">
-      <DependentUpon>infosys202117DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="infosys202117DataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>infosys202117DataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="infosys202117DataSet.xss">
-      <DependentUpon>infosys202117DataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -14,10 +14,10 @@ namespace SampleEntityFramework
         {
             using (var db = new BooksDbContext())
             {
-
-
-                Exercise13_1_1();
-                Exercise13_1_2();
+                AddBooks();
+                //AddAuthors();
+                //Exercise13_1_1();
+                //Exercise13_1_2();
                 //Exercise13_1_3();
                 //Exercise13_1_4();
                 //Exercise13_1_5();
@@ -260,6 +260,7 @@ namespace SampleEntityFramework
                     Author = author1,
                 };
                 db.Books.Add(book1);
+                db.SaveChanges();
                 var author2 = db.Authors.Single(a => a.Name == "宮沢賢治");
                 var book2 = new Book
                 {

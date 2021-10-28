@@ -17,7 +17,7 @@ namespace SendMail
     public partial class Form1 : Form
     {
         //設定画面
-        private ConfigForm configFrom = new ConfigForm();
+        private ConfigForm configForm = new ConfigForm();
 
         private Settings settings = Settings.getInstance();
 
@@ -35,11 +35,24 @@ namespace SendMail
                 //差出人アドレス
                 mailMessage.From = new MailAddress(settings.MailAddr);
                 //宛先（To）
+                if(tbTo.Text == "")
+                {
+                    MessageBox.Show("宛先が未入力です。");
+                }
+                if(tbMessage.Text == "")
+                {
+                    MessageBox.Show("本文が未入力です");
+                }
                 mailMessage.To.Add(tbTo.Text);
-
-                mailMessage.CC.Add(tbCc.Text);
-
-                mailMessage.Bcc.Add(tbBcc.Text);
+                if (tbCc.Text != "")
+                {
+                    mailMessage.CC.Add(tbCc.Text);
+                }    
+                if (tbBcc.Text != "")
+                {
+                    mailMessage.Bcc.Add(tbBcc.Text);
+                }
+                
                 //件名（タイトル
                 mailMessage.Subject = tbTitle.Text;
                 //本文
@@ -58,6 +71,8 @@ namespace SendMail
                 //MessageBox.Show("送信完了");
                 smtpClient.SendCompleted += SmtpClient_SendCompleted;
                 string userState = "SendMail";
+                //ここにマスト処理を置く
+                clear();
                 smtpClient.SendAsync(mailMessage, userState);
             }
             catch (Exception ex)
@@ -75,21 +90,39 @@ namespace SendMail
             else
             {
                 MessageBox.Show("送信完了");
+                
             }
         }
 
         private void btConfig_Click(object sender, EventArgs e)
         {
-            new ConfigForm().ShowDialog();
+            configForm.ShowDialog();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            using(var reader = XmlReader.Create("mailsetting.xml"))
+            if (!Settings.Set)
             {
-                var serializer = new DataContractSerializer(typeof(Settings));
-                var readData = serializer.ReadObject(reader) as Settings;
-            }
+                configForm.ShowDialog();
+            }  
+        }
+
+        private void 終了XToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void tbTo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        public void clear  ()
+        {
+            tbTo.Text = "";
+            tbBcc.Text = "";
+            tbCc.Text = "";
+            tbTitle.Text = "";
+            tbMessage.Text = "";
         }
     }
 }
