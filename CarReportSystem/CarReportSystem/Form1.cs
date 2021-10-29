@@ -142,8 +142,10 @@ namespace CarReportSystem {
 
         }
 
-        private void btSave_Click(object sender, EventArgs e)
+        private void btUpDate_Click(object sender, EventArgs e)
         {
+            if (carReportDataGridView.CurrentRow == null) return;
+
             carReportDataGridView.CurrentRow.Cells[1].Value = dtpDate.Value;
             carReportDataGridView.CurrentRow.Cells[2].Value = cbAuthor.Text;
             carReportDataGridView.CurrentRow.Cells[3].Value = selectedGroup().ToString();
@@ -157,9 +159,7 @@ namespace CarReportSystem {
             this.tableAdapterManager.UpdateAll(this.infosys202117DataSet);
         }
 
-        private void btOpen_Click(object sender, EventArgs e)
-        {
-
+        
 #if false
             if (ofdFileOpen.ShowDialog() == DialogResult.OK){
                 try { 
@@ -185,16 +185,24 @@ namespace CarReportSystem {
                 setCbCarName(item.CarName);
             }
             #endif
-        }
+        
+
         private void btConect_Click(object sender, EventArgs e)
         {
-
+            this.carReportTableAdapter.Fill(this.infosys202117DataSet.CarReport);
         }
     
     private void fmMian_Load(object sender ,EventArgs e)
             {
-                //dgvRegistData.Columns[5].Visible = false;
-            }
+            carReportDataGridView.Columns[0].Visible = false;
+            carReportDataGridView.Columns[1].HeaderText = "日付";
+            carReportDataGridView.Columns[2].HeaderText = "記録者";
+            carReportDataGridView.Columns[3].HeaderText = "メーカー";
+            carReportDataGridView.Columns[4].HeaderText = "車名";
+            carReportDataGridView.Columns[5].HeaderText = "レポート";
+            carReportDataGridView.Columns[6].HeaderText = "画像";
+            //dgvRegistData.Columns[5].Visible = false;
+        }
 
         private void carReportBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
@@ -242,6 +250,20 @@ namespace CarReportSystem {
             return b;
         }
 
+        private void carReportDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            dtpDate.Value = DateTime.Now;
+            cbAuthor.Text = "";
+            setMakerRadioButton(CarReport.MakerGroup.その他);
+            cbCarName.Text = "";
+            tbReport.Text =  "";
+            pbPicture.Image = null;
+
+        }
     }
 }
