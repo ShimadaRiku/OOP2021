@@ -5,35 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NumberGame"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="800"
-        FontSize="30" FontFamily="Segoe UI Light">
-    
+        Title="NumberGame" Height="600" Width="480">
 
-    <Grid Margin= "0,0,0,0"  >
-        <Button Height="80" Width="80" Margin="6,4,704,0" Content="1" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Height="80" Width="80" Margin="6,89,704,0" Content="6" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Height="80" Width="80" Margin="6,174,704,0" Content="11" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Height="80" Width="80" Margin="6,259,704,0" Content="16" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Height="80" Width="80" Margin="176,344,534,0" Content="23" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Height="80" Width="80" Margin="346,4,364,0" Content="5" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Height="80" Width="80" Margin="261,344,449,0" Content="24" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Height="80" Width="80" Margin="91,174,619,0" Content="12" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Height="80" Width="80" Margin="261,259,449,0" Content="19" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Height="80" Width="80" Margin="261,174,449,0" Content="14" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Height="80" Width="80" Margin="261,89,449,0" Content="9" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Height="80" Width="80" Margin="261,4,449,0" Content="4" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Height="80" Width="80" Margin="176,3,534,0" Content="3" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Height="80" Width="80" Margin="176,88,534,0" Content="8" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Height="80" Width="80" Margin="176,174,534,0" Content="13" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Height="80" Width="80" Margin="176,259,534,0" Content="18" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Height="80" Width="80" Margin="91,344,619,0" Content="22" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Height="80" Width="80" Margin="91,259,619,0" Content="17" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Height="80" Width="80" Margin="91,89,619,0" Content="7" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Height="80" Width="80" Margin="91,4,619,0" Content="2" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Height="80" Width="80" Margin="6,344,704,0" Content="21" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Height="80" Width="80" Margin="346,174,364,0" Content="15" VerticalAlignment="Top"  Click="Button_Click"/>
-        <Button Height="80" Width="80" Margin="346,344,364,0" Content="25" VerticalAlignment="Top"  Click="Button_Click"/>
-        <Button Height="80" Width="80" Margin="346,259,364,0" Content="20" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Height="80" Width="80" Margin="346,89,364,0" Content="10" VerticalAlignment="Top" Click="Button_Click"/>
+
+    <Grid Margin= "0,21,2,-15"  >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="207*"/>
+            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="58*"/>
+            <ColumnDefinition Width="135*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="bt1" Content="1" HorizontalAlignment="Left" Height="80" Width="80" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button x:Name="bt2" Content="2" HorizontalAlignment="Left" Height="80" Width="80" VerticalAlignment="Top" Click="Button_Click" Margin="85,0,0,0"/>
+        <Button x:Name="bt3" Content="3" HorizontalAlignment="Left" Height="80" Width="80" VerticalAlignment="Top" Click="Button_Click" Margin="170,0,0,0" Grid.ColumnSpan="2"/>
+        <Button x:Name="bt4" Content="4" HorizontalAlignment="Left" Height="80" Width="80" VerticalAlignment="Top" Click="Button_Click" Margin="48.244,0,0,0" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Button x:Name="bt5" Content="5" HorizontalAlignment="Left" Height="80" Width="80" VerticalAlignment="Top" Click="Button_Click" Margin="5,0,0,0" Grid.Column="3"/>
+        <Button x:Name="bt6" Content="6" HorizontalAlignment="Left" Height="80" Width="80" VerticalAlignment="Top" Click="Button_Click" Margin="0,85,0,0"/>
+        <Button x:Name="bt7" Content="7" HorizontalAlignment="Left" Height="80" Width="80" VerticalAlignment="Top" Click="Button_Click" Margin="85,85,0,0"/>
+        <Button x:Name="bt8" Content="8" HorizontalAlignment="Left" Height="80" Width="80" VerticalAlignment="Top" Click="Button_Click" Margin="170,85,0,0" Grid.ColumnSpan="2"/>
+        <Button x:Name="bt9" Content="9" HorizontalAlignment="Left" Height="80" Width="80" VerticalAlignment="Top" Click="Button_Click" Margin="48.244,85,0,0" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Button x:Name="bt10" Content="10" HorizontalAlignment="Left" Height="80" Width="80" VerticalAlignment="Top" Click="Button_Click" Margin="5,85,0,0" Grid.Column="3"/>
+        <Button x:Name="bt11" Content="11" HorizontalAlignment="Left" Height="80" Width="80" VerticalAlignment="Top" Click="Button_Click" Margin="0,170,0,0"/>
+        <Button x:Name="bt12" Content="12" HorizontalAlignment="Left" Height="80" Width="80" VerticalAlignment="Top" Click="Button_Click" Margin="85,170,0,0"/>
+        <Button x:Name="bt13" Content="13" HorizontalAlignment="Left" Height="80" Width="80" VerticalAlignment="Top" Click="Button_Click" Margin="170,169,0,0" Grid.ColumnSpan="2"/>
+        <Button x:Name="bt14" Content="14" HorizontalAlignment="Left" Height="80" Width="80" VerticalAlignment="Top" Click="Button_Click" Margin="48.244,169,0,0" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Button x:Name="bt15" Content="15" HorizontalAlignment="Left" Height="80" Width="80" VerticalAlignment="Top" Click="Button_Click" Margin="5,169,0,0" Grid.Column="3"/>
+        <Button x:Name="bt16" Content="16" HorizontalAlignment="Left" Height="80" Width="80" VerticalAlignment="Top" Click="Button_Click" Margin="0,254,0,0"/>
+        <Button x:Name="bt17" Content="17" HorizontalAlignment="Left" Height="80" Width="80" VerticalAlignment="Top" Click="Button_Click" Margin="85,254,0,0"/>
+        <Button x:Name="bt18" Content="18" HorizontalAlignment="Left" Height="80" Width="80" VerticalAlignment="Top" Click="Button_Click" Margin="170,254,0,0" Grid.ColumnSpan="2"/>
+        <Button x:Name="bt19" Content="19" HorizontalAlignment="Left" Height="80" Width="80" VerticalAlignment="Top" Click="Button_Click" Margin="48.244,254,0,0" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Button x:Name="bt20" Content="20" HorizontalAlignment="Left" Height="80" Width="80" VerticalAlignment="Top" Click="Button_Click" Margin="5,254,0,0" Grid.Column="3"/>
+        <Button x:Name="bt21" Content="21" HorizontalAlignment="Left" Height="80" Width="80" VerticalAlignment="Top" Click="Button_Click" Margin="0,339,0,0"/>
+        <Button x:Name="bt22" Content="22" HorizontalAlignment="Left" Height="80" Width="80" VerticalAlignment="Top" Click="Button_Click" Margin="85,339,0,0"/>
+        <Button x:Name="bt23" Content="23" HorizontalAlignment="Left" Height="80" Width="80" VerticalAlignment="Top" Click="Button_Click" Margin="170,339,0,0" Grid.ColumnSpan="2"/>
+        <Button x:Name="bt24" Content="24" HorizontalAlignment="Left" Height="80" Width="80" VerticalAlignment="Top" Click="Button_Click" Margin="48.244,339,0,0" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Button x:Name="bt25" Content="25" HorizontalAlignment="Left" Height="80" Width="80" VerticalAlignment="Top" Click="Button_Click" Margin="5,339,0,0" Grid.Column="3"/>
+        <TextBlock x:Name="Ans" HorizontalAlignment="Left" Margin="0,450,0,-117" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="80" Width="400" Grid.ColumnSpan="4" FontSize="20"/>
+        
     </Grid>
+
+
 </Window>
