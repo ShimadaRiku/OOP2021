@@ -35,15 +35,26 @@ namespace SendMail
                 //差出人アドレス
                 mailMessage.From = new MailAddress(settings.MailAddr);
                 //宛先（To）
+                
+                
                 mailMessage.To.Add(tbTo.Text);
-
-                mailMessage.CC.Add(tbCc.Text);
-
-                mailMessage.Bcc.Add(tbBcc.Text);
+                if (tbCc.Text!="")
+                {
+                    mailMessage.CC.Add(tbCc.Text);
+                }
+                if (tbCc.Text != "")
+                {
+                    mailMessage.Bcc.Add(tbBcc.Text);
+                }
                 //件名（タイトル
                 mailMessage.Subject = tbTitle.Text;
                 //本文
                 mailMessage.Body = tbMessage.Text;
+                if(tbMessage.Text == null || tbMessage.Text == string.Empty)
+                {
+                    MessageBox.Show("本文を打ち込んでください。");
+                    return;
+                }
 
                 //SMTPを使ってメールを送信する
                 SmtpClient smtpClient = new SmtpClient();
@@ -57,7 +68,11 @@ namespace SendMail
 
                 //MessageBox.Show("送信完了");
                 smtpClient.SendCompleted += SmtpClient_SendCompleted;
+
+                //clear();
                 string userState = "SendMail";
+
+    
                 smtpClient.SendAsync(mailMessage, userState);
             }
             catch (Exception ex)
@@ -75,21 +90,29 @@ namespace SendMail
             else
             {
                 MessageBox.Show("送信完了");
+                clear();
             }
         }
 
         private void btConfig_Click(object sender, EventArgs e)
         {
-            new ConfigForm().ShowDialog();
+            configFrom.ShowDialog();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            using(var reader = XmlReader.Create("mailsetting.xml"))
+            if(!Settings.Set)
             {
-                var serializer = new DataContractSerializer(typeof(Settings));
-                var readData = serializer.ReadObject(reader) as Settings;
+                configFrom.ShowDialog();
             }
+        }
+        public void clear()
+        {
+            tbTo.Text = "";
+            tbBcc.Text = "";
+            tbCc.Text = "";
+            tbTitle.Text = "";
+            tbMessage.Text = "";
         }
     }
 }

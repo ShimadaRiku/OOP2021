@@ -32,21 +32,23 @@ namespace SendMail
             cbSsl.Checked = settings.bSsl();    //SSL
             tbSender.Text = settings.sMailAddr();//送信元
         }
+        //適用
+        private void btApply_Click(object sender, EventArgs e)
+        {
+            settings.setSendConfig(tbHost.Text, int.Parse(tbPort.Text),
+                                    tbUserName.Text, tbPass.Text, cbSsl.Checked);
+        }
         //OKボタン
         private void btOk_Click(object sender, EventArgs e)
         {
-            SettingRegist();
+            btApply_Click(sender, e);
 
             this.Close();
         }
         //送信データの登録
         private void SettingRegist()
         {
-            settings.Host = tbHost.Text;
-            settings.Port = int.Parse(tbPort.Text);
-            settings.MailAddr = tbUserName.Text;
-            settings.Pass = tbPass.Text;
-            settings.Ssl = cbSsl.Checked;
+            
 
             //シリアル化
             var xws = new XmlWriterSettings
@@ -61,17 +63,27 @@ namespace SendMail
                 var serializer = new DataContractSerializer(settings.GetType());
                 serializer.WriteObject(writer, settings);
             }
-
         }
-        private void btApply_Click(object sender, EventArgs e)
-        {
-            SettingRegist();
-        } 
+        
 
         private void btCancel_Click(object sender, EventArgs e)
         {
             Close();
         }
-        
+
+        private void ConfigForm_Load(object sender, EventArgs e)
+        {
+            tbHost.Text = settings.Host;
+            tbPass.Text = settings.Pass;
+            tbPort.Text = settings.Port.ToString();
+            tbUserName.Text = settings.MailAddr;
+            tbSender.Text = settings.MailAddr;
+            cbSsl.Checked = settings.Ssl;
+        }
     }
 }
+//settings.Host = tbHost.Text;
+//settings.Port = int.Parse(tbPort.Text);
+//settings.MailAddr = tbUserName.Text;
+//settings.Pass = tbPass.Text;
+//settings.Ssl = cbSsl.Checked;
