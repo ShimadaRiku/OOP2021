@@ -13,7 +13,7 @@ namespace CarReportSystem {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fmMain());
+            Application.Run(new fmMain()); 
         }
     }
 }

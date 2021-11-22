@@ -270,7 +270,7 @@ namespace CarReportSystem {
             // pbPicture
             // 
             this.pbPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbPicture.Location = new System.Drawing.Point(436, 68);
+            this.pbPicture.Location = new System.Drawing.Point(435, 68);
             this.pbPicture.Name = "pbPicture";
             this.pbPicture.Size = new System.Drawing.Size(257, 197);
             this.pbPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
